@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio</title>
+	<style type="text/css">
+		*
+			{
+				text-align: center;
+			}
+		body
+			{
+				background-image: url("intro.jpg");
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				margin-top: 0px;
+			}
+		#profile
+			{
+				border-radius: 50%;
+				margin: auto;
+				display: block;
+				margin-top: 10%;
+			
+			}
+		ul.nav
+			{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+		ul.nav li {float: left;}
+		ul.pro
+			{
+				list-style-type: none;
+				font-size: 20px;
+
+			}
+		ul.nav li a, ul.pro li a 
+		{
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}	
+		
+		.accordion {
+			background-image: url("intro.jpg");
+			color: black;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 25px;
+			transition: 0.4s;
+		}
+
+		.active, .accordion:hover {
+			background-color: #ccc; 
+		}
+
+		.panel {
+			padding: 0 18px;
+			display: none;
+			background-color: gray;
+			overflow: hidden;
+		}
+
+		@media screen and (max-width: 600px) {
+		ul.nav li.right, 
+		ul.nav li {float: none;}
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">
+		<ul class="nav">
+		  <li><a href="#d6">Skills</a></li>
+		  <li><a href="#d4">Project</a></li>
+		  <li><a href="https://www.linkedin.com/in/shivam-tiwari-174183111" target="_blank">Contact</a></li>
+		  <li class="right"><a href="#d3">About</a></li>
+		</ul>
+		
+	</div>
+	<div id="d2"><img id="profile" src="shivam.jpeg" height="400px" width="300px">
+		<h1 style="color: white;">Shivam Tiwari</h1>
+		<hr>
+		<br>
+	</div>
+
+
+	<button id="d3" class="accordion">Introduction</button>
+	<div class="panel">
+		<p style="font-size: 20px;">
+		Hey Everyone, I'm Shivam Tiwari.<br>
+		A Beliver, Dreamer, and Achiever. 
+		</p>
+	</div>
+	<button id="d6" class="accordion">Technical Skills</button>
+	<div class="panel">
+		<p style="font-size: 20px;">
+			
+			1.	HTML<br>
+			2.	CSS<br>
+			3.	Java Script<br> 
+			4.	MySql<br>
+			5.	JQuery<br>
+			6.	Ajax<br>
+			7.	PHP<br>
+
+		</p>
+	</div>
+
+	<button id="d4" class="accordion">Project</button>
+	<div class="panel">
+		<ul class="pro">
+			<li><a href="flexbox.html" target="_blank"> Flexbox & Grid</a></li>
+			<li><a href="bill.html"> Bill Split Calculator</a></li>
+			<li><a href="index.html"> Portfolio Page</a></li>
+			<li><a href="login.html" target="_blank">Login Page Using PHP & MySQL</a></li>
+		</ul>
+		
+	</div>
+
+	<button id="d5" class="accordion">Contact</button>
+	<div class="panel">
+		<a href="https://www.linkedin.com/in/shivam-tiwari-174183111" target="_blank" style="text-decoration: none; font-size: x-large; color: white;" >LinkedIn</a>
+	</div>
+
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+			panel.style.display = "none";
+			} else {
+			panel.style.display = "block";
+			}
+		});
+		}
+	</script>
+
+</body>
+</html>

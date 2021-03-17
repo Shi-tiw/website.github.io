@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flex Advance</title>
+	<style type="text/css">
+		body
+			{
+				text-align: center;
+				font-size: 15px;
+				margin: auto;
+				width:80%;
+
+			}
+		#box
+			{
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				margin-top: 40px;
+
+			}
+		.header
+			{
+				height: 20vh;
+				background-color: #3399ff;
+				margin: 1px;
+			}
+		.footer
+			{
+				background-color: #666699;
+				height:20vh;
+				margin: 1px;
+			}
+		.hero
+			{
+				background-color: #66ff66;
+				flex: 3;
+				height: 9vh;
+				margin: 1px;
+			}
+		.sidebar
+			{
+				background-color: #ff0000;
+				flex: 1;
+				height: 16vh;
+				margin: 1px;
+			}
+		.main
+			{
+				background-color: #ffff00;
+				margin: 1px;
+				height: 16vh;
+			}
+		.image
+			{
+				background-color: #3366ff;
+				margin: 1px;
+				flex: 2;
+				height: 30vh;
+				overflow: hidden;
+			}
+		.post
+			{
+				background-color: #cc00ff;
+				margin: 1px;
+				flex: 1;
+				height: 30vh;
+			}
+		.extra
+			{
+				background-color: #ff0066;
+				margin: 1px;
+				height: 9vh;
+			}
+		.box3, .box2
+			{
+				display: flex;
+				height: 25%;
+			}
+		.inbox1
+			{
+				flex: 0.5;
+			}
+		.inbox2
+			{
+				flex: 1;
+			}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function()
+			{
+				$(".hero").hover(function()
+					{
+						$(".hero").css("background-color","#ff0000");
+						$(".sidebar").css("background-color","#66ff66");
+					},
+				function()
+					{
+						$(".sidebar").css("background-color","#ff0000");
+						$(".hero").css("background-color","#66ff66");
+					});
+				$(".sidebar").hover(function()
+					{
+						$(".hero").css("background-color","#ff0000");
+						$(".sidebar").css("background-color","#66ff66");
+					},
+				function()
+					{
+						$(".sidebar").css("background-color","#ff0000");
+						$(".hero").css("background-color","#66ff66");
+					});
+				$(".main").click(function() 
+					{
+						alert("This is the area for main content");
+					});
+				$(".image").click(function()
+				{	
+					$(".image p").hide()
+					var newImage = $('<img src="jquery.png" alt="logo" height="100%" width="100%">');
+					$(".image").append(newImage);
+				});
+			});
+	</script>
+</head>
+<body>
+<div id="box">
+	<div class="header">
+		Header
+	</div>
+
+	<div class="box2">
+		<div class="inbox1">
+			<div class="hero">
+				Hero
+			</div>
+			<div class="sidebar">
+				Sidebar
+			</div>
+
+		</div>
+		<div class="inbox2">
+			<div class="main">
+				Main
+			</div>
+			<div class="extra">
+				Extra
+			</div>
+
+		</div>
+	</div>
+	<div class="box3">
+		<div class="image">
+			<p>Image</p>
+		</div>
+		<div class="post">
+			Post
+		</div>
+	</div>
+	<div class="footer">
+		Footer
+	</div>
+</div>
+
+
+</body>
+</html>
